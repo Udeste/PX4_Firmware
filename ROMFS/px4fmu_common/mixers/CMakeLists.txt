@@ -68,7 +68,7 @@ px4_add_romfs_files(
 	phantom.main.mix
 	quad_dc.main.mix
 	quad_h.main.mix
-	quad_jarvis_180.mix
+	quad_jarvis_180.main.mix
 	quad_+.main.mix
 	quad_s250aq.main.mix
 	quad_+_vtol.main.mix
