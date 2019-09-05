@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# @name Jarvis
+#
+# @type Quadrotor Wide
+# @class Copter
+#
+# @output MAIN1 motor 1
+# @output MAIN2 motor 2
+# @output MAIN3 motor 3
+# @output MAIN4 motor 4
+# @output MAIN5 feed-through of RC AUX1 channel
+# @output MAIN6 feed-through of RC AUX2 channel
+#
+# @maintainer Umberto De Stefano <umberto@udeste.net>
+#
+
+set VEHICLE_TYPE mc
+
+if [ $AUTOCNF = yes ]
+then
+	param set NAV_ACC_RAD 2
+
+	param set RTL_RETURN_ALT 30
+	param set RTL_DESCEND_ALT 10
+	param set RTL_LAND_DELAY 0
+
+	param set PWM_MAX 1950
+	param set PWM_MIN 1075
+	param set PWM_RATE 400
+fi
+
+
+set MIXER quad_jarvis_180
+
+set PWM_OUT 1234
+

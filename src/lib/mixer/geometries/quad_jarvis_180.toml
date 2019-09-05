@@ -1,0 +1,57 @@
+#For reference: https://github.com/PX4/Devguide/issues/511
+
+#    M3 _______________ M1
+
+#            CoG
+#          /      \
+#         /        \
+#        /          \
+#       M2          M4
+#
+#
+#    d = sqrt(b^2 + h^2);
+#
+#    CoG-M1 = 0.28803 m
+#    CoG-M2 = 0.25402 m
+#
+#    M1 = [0.28803 * sin(0),   0.28803 * cos(0)  , 0]
+#    M2 = [0.25402 * sin(225), 0.25402 * cos(225), 0]
+#    M3 = [0.28803 * sin(180), 0.28803 * cos(180), 0]
+#    M4 = [0.25402 * sin(315), 0.25402 * cos(315), 0]
+#
+#    or
+#
+#    M1 = [ 0.28803 * sin(0) ,  0.28803 * cos(0) , 0]
+#    M2 = [-0.25402 * sin(45), -0.25402 * cos(45), 0]
+#    M3 = [-0.28803 * sin(0) ,  0.28803 * cos(0) , 0]
+#    M4 = [ 0.25402 * sin(45), -0.25402 * cos(45), 0]
+
+
+
+[info]
+key = "4j180"
+description = "Jarvis frame with front arms opened at 180°"
+
+[rotor_default]
+direction = "CW"
+axis      = [0.0, 0.0, -1.0]
+Ct        = 1.0
+Cm        = 0.01
+
+[[rotors]]
+name      = "front_right"
+position  = [0.0, 0.228, 0.0]
+direction = "CCW"
+
+[[rotors]]
+name      = "rear_left"
+position  = [-0.1796, -0.1796, 0.0]
+direction = "CCW"
+
+[[rotors]]
+name     = "front_left"
+position = [0.0, -0.228, 0.0]
+
+[[rotors]]
+name     = "rear_right"
+position = [-0.1796, 0.1796, 0.0]
